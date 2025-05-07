@@ -1,6 +1,6 @@
 require "noodle_soop/version"
 
-module Noodlesoop
+module NoodleSoop
   class Error < StandardError; end
     # Your code goes here...
 end

@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "noodle_soop/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "Noodle_soop"
-  spec.version       = Noodlesoop::VERSION
+  spec.name          = "NoodleSoop"
+  spec.version       = NoodleSoop::VERSION
   spec.authors       = ["Rahul Sharma"]
   spec.email         = ["REDACTED"]
 
@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://www.github.com/Rahulio2D/noodle_soop"
-    spec.metadata["changelog_uri"] = "https://www.github.com/Rahulio2D/noodle_soop/CHANGELOG.md."
+    spec.metadata["source_code_uri"] = "https://www.github.com/Rahulio2D/NoodleSoop"
+    spec.metadata["changelog_uri"] = "https://www.github.com/Rahulio2D/NoodleSoop/CHANGELOG.md."
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
