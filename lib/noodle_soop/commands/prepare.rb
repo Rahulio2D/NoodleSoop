@@ -12,7 +12,7 @@ module NoodleSoop
 
                 validate_website_path!
                 make_website_directory
-                # TODO: Modify template files somehow
+                set_example_blog_post
 
                 puts "Finished creating the website: #{website_path}"
             rescue StandardError => e
@@ -22,7 +22,8 @@ module NoodleSoop
             private
 
             def validate_website_path!
-                return unless Dir.exists?(website_path) 
+                return unless Dir.exists?(website_path)
+                return if Dir.empty?(website_path)
 
                 raise StandardError, "Directory already in use at /#{website_path}"
             end
@@ -32,6 +33,12 @@ module NoodleSoop
 
                 dest_path = File.join(Dir.pwd, website_path)
                 FileUtils.cp_r("#{TEMPLATE_DIR}/.", dest_path)
+            end
+
+            def set_example_blog_post
+                example_post = File.join(website_path, "_blogs", "example_post.md")
+                formatted_date = Time.now.strftime("%Y%m%d%H%M%S")
+                File.rename(example_post, File.join(website_path, "_blogs", "#{formatted_date}_example_post.md"))
             end
 
             attr_reader :website_path
