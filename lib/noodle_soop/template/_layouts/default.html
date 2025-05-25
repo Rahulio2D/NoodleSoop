@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>{{ site.title }} | {{ page.title }}</title>
+</head>
+<body class="default">
+    {{ include_component header.html }}
+    <div class="content">
+        {{ page.content }}
+    </div>
+    {{ include_component footer.html }}
+</body>
+</html>

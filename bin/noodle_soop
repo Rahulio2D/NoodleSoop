@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'noodle_soop'
+
+NoodleSoop::CLI.start(ARGV)

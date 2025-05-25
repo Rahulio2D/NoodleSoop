@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+bundle exec ./bin/noodle_soop prepare to build the template for your site.
 
 ## Development
 
