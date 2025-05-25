@@ -1,0 +1,1 @@
+class CouldNotPrepareWebsiteError < StandardError; end

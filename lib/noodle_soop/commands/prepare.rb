@@ -1,3 +1,5 @@
+require_relative '../errors/could_not_prepare_website_error'
+
 module NoodleSoop
     module Commands
         class Prepare
@@ -15,17 +17,17 @@ module NoodleSoop
                 set_example_blog_post
 
                 puts "Finished creating the website: #{website_path}"
-            rescue StandardError => e
-                puts "An error occurred: #{e.message}"
             end
 
             private
+
+            attr_reader :website_path
 
             def validate_website_path!
                 return unless Dir.exists?(website_path)
                 return if Dir.empty?(website_path)
 
-                raise StandardError, "Directory already in use at /#{website_path}"
+                raise CouldNotPrepareWebsiteError, "Directory already in use at /#{website_path}"
             end
 
             def make_website_directory
@@ -40,8 +42,6 @@ module NoodleSoop
                 formatted_date = Time.now.strftime("%Y%m%d%H%M%S")
                 File.rename(example_post, File.join(website_path, "_blogs", "#{formatted_date}_example_post.md"))
             end
-
-            attr_reader :website_path
         end
     end
 end
