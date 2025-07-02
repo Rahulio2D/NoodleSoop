@@ -1,7 +1,9 @@
-require "noodle_soop/version"
+# frozen_string_literal: true
+
+require 'noodle_soop/version'
 require 'noodle_soop/cli'
 
 module NoodleSoop
   class Error < StandardError; end
-    # Your code goes here...
+  # Your code goes here...
 end
